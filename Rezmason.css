@@ -1,0 +1,211 @@
+html {
+
+	--black: #000;
+	--cyan: #72dec2;
+	--cyan-light: #9ffce3;
+	--gray-shade-1: #111;
+	--gray-shade-1-5: #1a1a1a;
+	--gray-shade-2: #222;
+	--gray-shade-3: #333;
+	--gray-shade-4: #444;
+	--gray-shade-5: #555;
+	--gray-shade-6: #666;
+	--gray-shade-7: #777;
+	--gray-shade-8: #888;
+	--gray-shade-9: #999;
+	--gray-shade-a: #aaa;
+	--gray-shade-c: #ccc;
+	--gray-shade-e: #eee;
+	--white: #fff;
+
+	--red: #f00;
+	--deep-red: #600;
+
+	font-family: "Saira SemiCondensed", "Helvetica", sans-serif;
+	font-weight: 300;
+	font-size: 14pt;
+	background-color: var(--gray-shade-1);
+	color: var(--white);
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	margin: 0;
+	padding: 0.5ex 1.5ex;
+}
+body.console {}
+body.normal {
+	line-height: 3.2ex;
+}
+
+hr { margin: 0.5em 2em; }
+
+a {
+	color: unset;
+}
+
+a:hover {
+	color: var(--gray-shade-a);
+}
+
+body.normal .message[type=privmsg] a, body.normal .message[type=notice] a, body.normal .message[type=action] a {
+	display: inline-block;
+	padding: 0 1ex;
+	border-radius: 0.5ex;
+	border: 0.25ex var(--white) solid;
+	color: var(--white);
+	text-decoration: none;
+	font-weight: 600;
+}
+
+body.normal .message[type=privmsg] a:hover, body.normal .message[type=notice] a:hover, body.normal .message[type=action] a:hover {
+	background: white;
+	color: var(--gray-shade-2);
+}
+
+.inlineimage {
+	margin: 10px 20px 15px 0;
+	max-width: 200px;
+	max-height: 150px;
+	-webkit-box-shadow: 2px 2px 2px var(--cyan);
+}
+
+.line	{ margin: 0.2ex 0; }
+.time	{ color: var(--gray-shade-5); }
+.place { color: var(--gray-shade-a); }
+
+::selection {
+	background-color: var(--deep-red);
+	color: var(--red);
+}
+
+/* Nicks */
+
+.sender[type=normal] { color: var(--white); font-weight: 400; margin-right: 1.5ex; }
+.sender[type=myself] { color: var(--white); font-weight: 600; margin-right: 1.5ex; }
+
+
+/* Messages */
+
+.message[type=privmsg] { color: var(--white); }
+.message[type=action] { color: inherit;}
+.message[type=notice] { color: var(--cyan-light); }
+.message[type=system] { color: var(--cyan-light); }
+.message[type=error] { color: var(--cyan); font-weight: 600; }
+.message[type=reply] { color: var(--cyan); }
+.message[type=error_reply] { font-style: italic; color: var(--red); }
+.message[type=dcc_send_send] { color: var(--gray-shade-7); }
+.message[type=dcc_send_receive] { color: var(--gray-shade-7); }
+.message[type=join] { font-style: italic; color: var(--gray-shade-7); }
+.message[type=part] { font-style: italic; color: var(--gray-shade-7); }
+.message[type=quit] { font-style: italic; color: var(--gray-shade-7); }
+.message[type=kick] { font-style: italic; color: var(--gray-shade-7); }
+.message[type=kill] { font-style: italic; color: var(--gray-shade-7); }
+.message[type=nick] { font-style: italic; color: var(--gray-shade-7); }
+.message[type=mode] { color: var(--cyan); }
+.message[type=topic] { color: var(--cyan); }
+.message[type=invite] { color: var(--cyan-light); font-style: italic; }
+.message[type=wallops] { font-style: italic; color: var(--gray-shade-7); }
+.message[type=debug_send] { font-style: italic; color: var(--gray-shade-7); }
+.message[type=debug_receive] { font-style: italic; color: var(--gray-shade-7); }
+
+.highlight {
+	color: var(--cyan);
+	font-weight: normal;
+}
+
+/* Special spans */
+
+.url {
+	word-break: break-all;
+}
+.address {
+	text-decoration: underline; word-break: break-all;
+}
+
+/* Messages in main view, but not console */
+body.normal .message[type=privmsg]					{ padding-left: 22ex; display: block; }
+
+body.normal .message[type=notice]					 { padding-left: 22ex; display: block; }
+body.normal .message[type=join]						 { padding-left: 22ex; }
+body.normal .message[type=part]						 { padding-left: 22ex; }
+body.normal .message[type=quit]						 { padding-left: 22ex; }
+body.normal .message[type=kick]						 { padding-left: 22ex; }
+body.normal .message[type=kill]						 { padding-left: 22ex; }
+body.normal .message[type=nick]						 { padding-left: 22ex; }
+body.normal .message[type=mode]						 { padding-left: 22ex; }
+body.normal .message[type=topic]						{ padding-left: 22ex; }
+body.normal .message[type=invite]					 { padding-left: 22ex; }
+body.normal .message[type=wallops]					{ padding-left: 22ex; }
+
+body.normal .message[type=system]					 { padding-left: 22ex; }
+body.normal .message[type=error]						{ padding-left: 22ex; }
+body.normal .message[type=reply]						{ padding-left: 22ex; display: block; }
+body.normal .message[type=error_reply]			{ padding-left: 22ex; }
+body.normal .message[type=dcc_send_send]		{ padding-left: 22ex; }
+body.normal .message[type=dcc_send_receive] { padding-left: 22ex; }
+
+body.normal .message[type=debug_send]			 { padding-left: 22ex; }
+body.normal .message[type=debug_receive]		{ padding-left: 22ex; }
+
+/* Spans in line */
+
+body.normal .time {
+	display: block;
+	float: left;
+	width: 5ex;
+}
+
+body.normal .sender[type=normal], body.normal .sender[type=myself] {
+	display: block;
+	float: left;
+	text-align: right;
+	width: 14ex;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+body.normal div.line[type=action] .sender[type=normal], div.line[type=action] .sender[type=myself] {
+	width: auto;
+	margin-right: 1ex;
+	color: var(--red);
+	background-color: transparent;
+}
+
+body.normal div.line[type=action] .sender[type=normal]::before, div.line[type=action] .sender[type=myself]::before {
+	content: "•";
+	padding-right: 1.5ex;
+}
+
+
+body.normal .line[highlight=true] > .sender[type=normal] {
+	margin-left: -1ex;
+	padding-left: 0.2ex;
+	padding-right: 0.8ex;
+	-webkit-border-top-right-radius: 3px;
+	-webkit-border-bottom-right-radius: 3px;
+	line-height:3ex;
+	color: var(--red);
+}
+
+body.normal .sender:after {
+	content: " —";
+	font-weight: 400;
+	color: var(--white);
+}
+
+.line[highlight=true] {
+	background-color: transparent;
+}
+
+/* disable funky mirc colours */
+
+.effect[color-number] { color: inherit; background-color: inherit; font-style: italic; }
+
+html[channelname="#merveilles"].normal,
+html[channelname="#Merveilles"].normal {
+	background: var(--gray-shade-1) url('badges/merveilles.svg') no-repeat fixed center center;
+	background-size: cover;
+}

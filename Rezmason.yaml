@@ -1,0 +1,52 @@
+# All colors must be in the form of '#rrggbb' or '#rgb'.
+# You cannot use color names.
+
+log-view:
+  nickname-format: '%n'
+
+input-text:
+  font-family: 'Saira SemiCondensed'
+  font-size: 24.0
+  background-color: '#111'
+  color: '#fff'
+member-list:
+  font-family: 'Saira SemiCondensed'
+  font-size: 18.0
+  color: '#bbb'
+  background-color: '#111'
+  operator:
+    color: '#9ffce3'
+  selected:
+    color: '#111'
+    background:
+      # gradient
+      top-line-color: '#72dec2'
+      bottom-line-color: '#72dec2'
+      top-color: '#72dec2'
+      bottom-color: '#72dec2'
+server-tree:
+  font-family: 'Saira SemiCondensed'
+  font-size: 18.0
+  background-color: '#111'
+  highlight:
+    color: '#E9C062'
+  newtalk:
+    color: '#72dec2'
+  unread:
+    color: '#72dec2'
+  normal:
+    active:
+      color: '#888'
+    inactive:
+      color: '#5e5960'
+  selected:
+    active:
+      color: '#C0C0C0'
+    inactive:
+      color: '#7c767e'
+    background:
+      # gradient
+      top-line-color: '#111'
+      bottom-line-color: '#111'
+      top-color: '#111'
+      bottom-color: '#111'
